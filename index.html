@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ru">
+
+    <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/styles.css">-->
+    <title>Splat</title>
+    <!-- after project finished - next two strings should be removed -->
+    <link rel="stylesheet/less" type="text/css" href="/less/styles.less">
+    <script type="text/javascript" src="/js/less.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="block block__left">
+                <div class="logo">
+                    <img src="images/logo_splat.jpg" width="70" height="66" alt="SPLAT LOGO"><br><span>Professional<br> oral care</span>
+                </div>
+                <div class="language_switcher"><a href="javascript:void(0)">In English</a></div>
+            </div>
+            <div class="block block__center">
+                <ul class="menu">
+                    <li class="menu-item"><a href="javascript:void(0)">О компании</a></li>
+                    <li class="menu-item"><a href="javascript:void(0)">Продукты</a></li>
+                    <li class="menu-item"><a href="javascript:void(0)">Выбери себе</a></li>
+                    <li class="menu-item"><a href="javascript:void(0)">Общение</a></li>
+                    <li class="menu-item"><a href="javascript:void(0)">Сотрудничество</a></li>
+                    <li class="menu-item"><a href="javascript:void(0)">Карьера</a></li>
+                    <li class="menu-item"><a href="javascript:void(0)">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="block block__right">
+                <p>Мы на <a href="javascript:void(0)">Facebook</a></p>
+                <form class="search"><input id="search-field" class="field_search" type="search" method="post" placeholder="find your brush..."><input type="submit" class="button_search" id="search_button" hidden><label for="search_button"></label></form>
+            </div>
+            <div class="block clearfix"></div>
+        </div>
+    </header>
+    <section class="bullets">
+        <div class="wrapper">
+            <table class="block clearfix">
+                <tr>
+                    <td class="table_icon"><img src="images/icon_bulb.svg" alt="icon_idea" height="89"></td>
+                    <td class="table_icon"><img src="images/icon_thumb-up.svg" alt="icon_idea" height="55"></td>
+                    <td class="table_icon"><img src="images/icon_tube.svg" alt="icon_idea" height="89"></td>
+                    <td class="table_icon"><img src="images/icon_drop.svg" alt="icon_idea" height="89"></td>
+                </tr>
+                <tr>
+                    <td class="table_caption">Идея</td>
+                    <td class="table_caption">Качество</td>
+                    <td class="table_caption">Результат</td>
+                    <td class="table_caption">Экологичность</td>
+                </tr>
+                <tr>
+                    <td class="table_text">
+                        Наши идеи рождаются из мечты. Нам нравится находить их и воплощать в жизнь. Мы искренне рады, когда наши друзья, покупатели и партнеры делятся своими фантазиями и желаниями и просят нас сделать что-то по-настоящему нужное.
+                    </td>
+                    <td class="table_text" id="quality">
+                        Идея непрерывного контроля качества и совершенствования всех видов продуктов — наша норма. Собственное сертифицированное производство и отлаженная работа службы контроля качества дают нам возможность получить высочайший уровень выпускаемых продуктов.
+                    </td>
+                    <td class="table_text">
+                        Все продукты SPLAT проходят расширенные клинические испытания, терапевтический эффект которых подтвержден в результате исследований, проведенных в ведущих институтах России, странах Евросоюза, Японии или США.
+                    </td>
+                    <td class="table_text">
+                        Мы ценим возможность сохранить экологию нашей планеты, поэтому в составе продуктов, производимых нами, нет вредных для здоровья планеты и человека ингредиентов. Наше предприятие является CO2&ndash;нейтральным и находится в экологически чистом районе Валдая.
+                    </td>
+                </tr>
+            </table>
+            <div class="clearfix block slider_container">
+                <!--                future Идея #1: при наведении на ячейку таблицы slider_bar смещается соответственно ячейке Идея #2: запилить параллакс, где slider_bar смещается соответственно курсору по оси X-->
+                <div class="block bullets_slider">
+                    <div class="block slider_bar" for="idea"></div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="products">
+        <div class="wrapper">
+            <!--future: slider-checkboxes-->
+            <input type="checkbox" class="product-name" id="radio-lallum-baby">
+            <input type="checkbox" class="product-name" id="radio-splat-professional">
+            <input type="checkbox" class="product-name" id="radio-iney">
+            <input type="checkbox" class="product-name" id="radio-prowhiter">
+            <input type="checkbox" class="product-name" id="radio-smilex">
+            <input type="checkbox" class="product-name" id="radio-innova">
+            <!--                future slider-menu-->
+            <div class="block container">
+                <ul class="block product_line">
+                    <li class="product_line_item"><label class="slide-switcher" id="label-for-lallum-baby" for="radio-lallum-baby">lalum baby</label></li>
+                    <li class="product_line_item"><label class="slide-switcher" id="label-for-splat-professional" for="radio-splat-professional">splat professional</label></li>
+                    <li class="product_line_item"><label class="slide-switcher" id="label-for-iney" for="radio-iney">iney</label></li>
+                    <li class="product_line_item"><label class="slide-switcher" id="label-for-prowhiter" for="radio-prowhiter">pro-whiter</label></li>
+                    <li class="product_line_item"><label class="slide-switcher" id="label-for-smilex" for="radio-smilex">smilex</label></li>
+                    <li class="product_line_item"><label class="slide-switcher" id="label-for-innova" for="radio-innova">innova</label></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <!--                future slider-slides-->
+            <div class="block clearfix overflow-controller">
+                <div class="block block slider_container">
+                    <div class="inline-block slide">
+                        <div class="block slide_img"> </div>
+                        <div class="block slide_description">
+                            <!--                    здесь панчлайн-->
+                            <p><span class="product_name">lallum baby</span> &mdash; инновационные средства для интенсивного отбеливания и укрепления эмали зубов</p>
+                        </div>
+                        <div class="block clearfix slide_text">
+                            <!--                    здесь описалово-->
+                            <table>
+                                <tr>
+                                    <td>Серия инновационных продуктов Lallum Baby не имеет аналогов в области ухода за полостью рта</td>
+                                    <td>4 года научных работ и клинических иследований, свершивших революционный прорыв и открывших миру инновационную отбеливающую систему <a href="javascrip:void(0)">SNOW&ndash;NOW</a></td>
+                                    <td>Первые в мире профессиональные средства в сегменте beauty oral care, одновременно объединяющие косметический результат отбеливания с терапевтическим уходом за эмалью и деснами</td>
+                                    <td>Гармония и мудрость Японии, нашедшая свое отражение в совместной разработке ученых Splat и компании <a href="javascript:void(0)">Maruzen Pharmaceuticals</a> (Япония)</td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                    <div class="inline-block slide">
+                        <div class="block slide_img"> </div>
+                        <div class="block slide_description">
+                            <!--                    здесь панчлайн-->
+                            <p><span class="product_name">splat professional</span> &mdash; инновационные средства для интенсивного отбеливания и укрепления эмали зубов</p>
+                        </div>
+                        <div class="block clearfix slide_text">
+                            <!--                    здесь описалово-->
+                            <table>
+                                <tr>
+                                    <td>Серия инновационных продуктов Lallum Baby не имеет аналогов в области ухода за полостью рта</td>
+                                    <td>4 года научных работ и клинических иследований, свершивших революционный прорыв и открывших миру инновационную отбеливающую систему <a href="javascrip:void(0)">SNOW&ndash;NOW</a></td>
+                                    <td>Первые в мире профессиональные средства в сегменте beauty oral care, одновременно объединяющие косметический результат отбеливания с терапевтическим уходом за эмалью и деснами</td>
+                                    <td>Гармония и мудрость Японии, нашедшая свое отражение в совместной разработке ученых Splat и компании <a href="javascript:void(0)">Maruzen Pharmaceuticals</a> (Япония)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="inline-block slide">
+                        <div class="block slide_img"> </div>
+                        <div class="block slide_description">
+                            <!--                    здесь панчлайн-->
+                            <p><span class="product_name">iney</span> &mdash; инновационные средства для интенсивного отбеливания и укрепления эмали зубов</p>
+                        </div>
+                        <div class="block clearfix slide_text">
+                            <!--                    здесь описалово-->
+                            <table>
+                                <tr>
+                                    <td>Серия инновационных продуктов Lallum Baby не имеет аналогов в области ухода за полостью рта</td>
+                                    <td>4 года научных работ и клинических иследований, свершивших революционный прорыв и открывших миру инновационную отбеливающую систему <a href="javascrip:void(0)">SNOW&ndash;NOW</a></td>
+                                    <td>Первые в мире профессиональные средства в сегменте beauty oral care, одновременно объединяющие косметический результат отбеливания с терапевтическим уходом за эмалью и деснами</td>
+                                    <td>Гармония и мудрость Японии, нашедшая свое отражение в совместной разработке ученых Splat и компании <a href="javascript:void(0)">Maruzen Pharmaceuticals</a> (Япония)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="inline-block slide">
+                        <div class="block slide_img"> </div>
+                        <div class="block slide_description">
+                            <!--                    здесь панчлайн-->
+                            <p><span class="product_name">pro-whiter</span> &mdash; инновационные средства для интенсивного отбеливания и укрепления эмали зубов</p>
+                        </div>
+                        <div class="block clearfix slide_text">
+                            <!--                    здесь описалово-->
+                            <table>
+                                <tr>
+                                    <td>Серия инновационных продуктов Lallum Baby не имеет аналогов в области ухода за полостью рта</td>
+                                    <td>4 года научных работ и клинических иследований, свершивших революционный прорыв и открывших миру инновационную отбеливающую систему <a href="javascrip:void(0)">SNOW&ndash;NOW</a></td>
+                                    <td>Первые в мире профессиональные средства в сегменте beauty oral care, одновременно объединяющие косметический результат отбеливания с терапевтическим уходом за эмалью и деснами</td>
+                                    <td>Гармония и мудрость Японии, нашедшая свое отражение в совместной разработке ученых Splat и компании <a href="javascript:void(0)">Maruzen Pharmaceuticals</a> (Япония)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="inline-block slide">
+                        <div class="block slide_img"> </div>
+                        <div class="block slide_description">
+                            <!--                    здесь панчлайн-->
+                            <p><span class="product_name">smilex</span> &mdash; инновационные средства для интенсивного отбеливания и укрепления эмали зубов</p>
+                        </div>
+                        <div class="block clearfix slide_text">
+                            <!--                    здесь описалово-->
+                            <table>
+                                <tr>
+                                    <td>Серия инновационных продуктов Lallum Baby не имеет аналогов в области ухода за полостью рта</td>
+                                    <td>4 года научных работ и клинических иследований, свершивших революционный прорыв и открывших миру инновационную отбеливающую систему <a href="javascrip:void(0)">SNOW&ndash;NOW</a></td>
+                                    <td>Первые в мире профессиональные средства в сегменте beauty oral care, одновременно объединяющие косметический результат отбеливания с терапевтическим уходом за эмалью и деснами</td>
+                                    <td>Гармония и мудрость Японии, нашедшая свое отражение в совместной разработке ученых Splat и компании <a href="javascript:void(0)">Maruzen Pharmaceuticals</a> (Япония)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="inline-block slide">
+                        <div class="block slide_img"> </div>
+                        <div class="block slide_description">
+                            <!--                    здесь панчлайн-->
+                            <p><span class="product_name">innova</span> &mdash; инновационные средства для интенсивного отбеливания и укрепления эмали зубов</p>
+                        </div>
+                        <div class="block clearfix slide_text">
+                            <!--                    здесь описалово-->
+                            <table>
+                                <tr>
+                                    <td>Серия инновационных продуктов Lallum Baby не имеет аналогов в области ухода за полостью рта</td>
+                                    <td>4 года научных работ и клинических иследований, свершивших революционный прорыв и открывших миру инновационную отбеливающую систему <a href="javascrip:void(0)">SNOW&ndash;NOW</a></td>
+                                    <td>Первые в мире профессиональные средства в сегменте beauty oral care, одновременно объединяющие косметический результат отбеливания с терапевтическим уходом за эмалью и деснами</td>
+                                    <td>Гармония и мудрость Японии, нашедшая свое отражение в совместной разработке ученых Splat и компании <a href="javascript:void(0)">Maruzen Pharmaceuticals</a> (Япония)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--    fixme а тут можно забыть про слайдер-->
+
+    </section>
+    <section>
+        <div class="wrapper">
+            <ul>
+                <li>
+                    <a href="javascript:void(0)">Письма из упаковки</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">Написать письмо</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">Задать вопрос эксперту</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">Рекомендации экспертов</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">Поделиться идеей</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">Конкурсы</a>
+                </li>
+            </ul>
+            <p><span class="where-to-buy">Где купить</span><br>продукцию Splat</p>
+            <img src="images/kakoj-to-hooj.jpg" alt="kakoj-to hooj" width="94" height="129">
+            <blockquote>
+                <p>Когда вкладываешь всю душу в то, что создаешь, получаешь поистине бесценный результат. Когда веришь, что нет ничего невозможного, и самые смелые желания обретают форму, понимаешь, твой путь пройден не зря. Мы искренне верим &mdash; каждый способен изменить мир к лучшему. Создавая продукты под маркой SPLAT, мы знаем, что всё тепло, вложенное в них, сделает ваш день ярче, счастливее и добрее.</p><br>
+                <p>Помогать людям быть здоровыми, красивыми и успешными &mdash; наша миссия</p>
+                <cite>Евгений Демин,<br>Генеральный директор SPLAT</cite>
+            </blockquote>
+        </div>
+    </section>
+    <footer>
+        <div class="wrapper">
+            <img src="images/logo_splat.jpg" width="37" height="34" alt="SPLAT LOGO">
+            <copyright>© Splat, 2012</copyright>
+            <a href="javascript:void(0)">Где купить</a>
+            <a href="javascript:void(0)">Обратная связь</a>
+            <!--    future тут не забыть про блок с социалкой-->
+            <!--    fixme  а тут забыть про блок с социалкой-->
+            <p>Если вы хотите перепечатать или использовать материалы, опубликованные на сайте, обратитесь, пожалуйста, к директору по PR по телефону 725 66 38. Спасибо!</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/myscript.js"></script>
+</body>
+
+</html>
+
+

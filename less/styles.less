@@ -1,0 +1,477 @@
+/*Colors Defenition*/
+
+@color-link: rgba(207, 19, 71, 1);
+@color-icon: rgba(193, 224, 236, 1);
+@color-brand: rgba(243, 245, 246, 1);
+@color-text: rgba(129, 129, 129, 1);
+
+/*---------------------*/
+
+
+/*Fonts Defenition*/
+
+@font-face {
+    font-family: 'texgyreherosregular';
+    src: url('../fonts/texgyreheros-regular-webfont.woff') format('woff');
+}
+
+@font-light: 'texgyreherosregular',
+sans-serif;
+@font-size-basic: 14px;
+
+/*--------------------------------*/
+
+
+/*Mixins Defenition*/
+
+.font-size-basic {
+    font-size: @font-size-basic;
+}
+
+.font-size-sub (@subtrahend) {
+    font-size: calc(@font-size-basic - @subtrahend);
+}
+
+.font-size-sup (@foldable) {
+    font-size: calc(@font-size-basic + @foldable);
+}
+
+
+/*------------------------------*/
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    .font-size-basic;
+}
+
+header,
+section,
+footer {
+    width: 100%;
+}
+
+header,
+section {
+    border-bottom: solid 1px #ecf0f2;
+}
+
+.wrapper {
+    width: 962px;
+    margin: auto;
+    padding-top: 29px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+}
+
+a,
+p,
+span,
+h1,
+h2,
+h3,
+dt,
+dd,
+li {
+    font-family: @font-light;
+}
+
+a {
+    color: @color-link;
+}
+
+p,
+.table_caption,
+.table_text {
+    color: @color-text;
+}
+
+.language_switcher a {
+    color: @color-text;
+    font-style: italic;
+    .font-size-sub(2);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    li {
+        padding-left: 20px;
+    }
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.overflow-controller {
+    overflow: hidden;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.block__left {
+    float: left;
+}
+
+.block__right {
+    float: right;
+}
+
+.table_caption,
+.where-to-buy {
+    .font-size-sup(10);
+}
+
+.where-to-buy {
+    color: @color-link;
+}
+
+header {
+    background-color: @color-brand;
+    box-shadow: inset 0 -20px 60px darken(@color-brand, 10%);
+    .block__left {
+        .logo {
+            float: left;
+            span {
+                padding-top: 14px;
+                .font-size-basic;
+            }
+        }
+        .language_switcher {
+            float: right;
+            margin-left: 71px;
+            padding-left: 20px;
+        }
+    }
+    .block__center {
+        float: left;
+        margin-left: 80px;
+        padding-top: 0;
+        .menu {
+            margin-top: -6px;
+            column-count: 2;
+            column-gap: 54px;
+            line-height: 30px;
+            vertical-align: text-top;
+        }
+    }
+    .block__right {
+        text-align: right;
+        p {
+            margin-top: 0;
+            a {
+                color: #5674b9;
+                text-decoration: none;
+            }
+        }
+        .search {
+            margin-top: 66px;
+            .field_search {
+                border: none;
+                box-shadow: inset 1px 1px 3px 0 grey;
+                padding-left: 5px;
+                &::-webkit-input-placeholder {
+                    .font-size-sub(3);
+                    //                    padding-left: 5px;
+                    color: lighten(@color-text, 10%);
+                }
+            }
+            .button_search+label {
+                position: relative;
+                //                display: hidden;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 3px;
+                    right: 6px;
+                    display: inline-block;
+                    width: 11px;
+                    height: 11px;
+                    border: none;
+                    background-image: url(../images/icon_search.svg);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+                &:hover {
+                    cursor: help;
+                }
+            }
+        }
+    }
+}
+
+.bullets {
+    background-color: @color-brand;
+    padding-bottom: 30px;
+    .wrapper {
+        table {
+            border-collapse: collapse;
+            tr:first-child {
+                td {
+                    vertical-align: bottom;
+                }
+                td:first-child img {
+                    margin-left: -15px;
+                }
+            }
+            td {
+                width: 240px;
+                padding-right: 20px;
+                padding-bottom: 5px;
+                padding-top: 5px;
+                vertical-align: top;
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+        .table_text {
+            .font-size-basic;
+            font-stretch: semi-condensed;
+            line-height: 20px;
+            word-wrap: break-word;
+            word-break: keep-all;
+        }
+    }
+    .slider_container {
+        width: 300px;
+        margin: auto;
+        .bullets_slider {
+            margin-top: 30px;
+            width: 100%;
+            height: 5px;
+            background-color: lighten(@color-text, 30%);
+            opacity: 0.5;
+            padding: 0;
+        }
+        .slider_bar {
+            margin: 0;
+            height: 100%;
+            width: 60px;
+            background-color: saturate(@color-link, 200%);
+            opacity: 1;
+        }
+    }
+}
+
+.products {
+    input {
+        &[type="checkbox"] {
+            visibility: hidden;
+            position: relative;
+            top: 260px;
+            &::before,
+            &::after {
+                position: absolute;
+                visibility: visible;
+                transform: rotate(45deg);
+                content: "";
+                display: block;
+                width: 40px;
+                height: 40px;
+                border: 2px solid @color-link;
+            }
+            &::before {
+                border-top-color: transparent;
+                border-right-color: transparent;
+            }
+            &::after {
+                border-bottom-color: transparent;
+                border-left-color: transparent;
+            }
+            &[id="radio-lallum-baby"] {
+                &::before {
+                    left: -40px;
+                }
+                &::after {
+                    right: -990px;
+                }
+            }
+            &[id="radio-splat-professional"] {
+                &::before {
+                    left: -58px;
+                }
+                &::after {
+                    right: -973px;
+                }
+            }
+            &[id="radio-iney"] {
+                &::before {
+                    left: -75px;
+                }
+                &::after {
+                    right: -956px;
+                }
+            }
+            &[id="radio-prowhiter"] {
+                &::before {
+                    left: -92px;
+                }
+                &::after {
+                    right: -939px;
+                }
+            }
+            &[id="radio-smilex"] {
+                &::before {
+                    left: -109px;
+                }
+                &::after {
+                    right: -922px;
+                }
+            }
+            &[id="radio-innova"] {
+                &::before {
+                    left: -126px;
+                }
+                &::after {
+                    right: -905px;
+                }
+            }
+        }
+        &[id="radio-lallum-baby"]:checked~.container ul li #label-for-lallum-baby,
+        &[id="radio-splat-professional"]:checked~.container ul li #label-for-splat-professional,
+        &[id="radio-iney"]:checked~.container ul li #label-for-iney,
+        &[id="radio-prowhiter"]:checked~.container ul li #label-for-prowhiter,
+        &[id="radio-smilex"]:checked~.container ul li #label-for-smilex,
+        &[id="radio-innova"]:checked~.container ul li #label-for-innova {
+            position: relative;
+            background-color: @color-link;
+            color: #fff;
+            font-weight: bold;
+            &::after {
+                content: "";
+                display: block;
+                width: 0px;
+                height: 0;
+                border-color: transparent;
+                border-width: 15px;
+                border-style: solid;
+                border-top-color: @color-link;
+                position: absolute;
+                bottom: -25px;
+                z-index: 1;
+            }
+        }
+        &[id="radio-lallum-baby"]:checked {
+            &~.container ul li #label-for-lallum-baby::after {
+                left: 65px;
+            }
+        }
+        &[id="radio-splat-professional"]:checked~.container ul li #label-for-splat-professional::after {
+            left: 117px;
+        }
+        &[id="radio-iney"]:checked~.container ul li #label-for-iney::after {
+            left: 28px;
+        }
+        &[id="radio-prowhiter"]:checked~.container ul li #label-for-prowhiter::after {
+            left: 68px;
+        }
+        &[id="radio-smilex"]:checked~.container ul li #label-for-smilex::after {
+            left: 45px;
+        }
+        &[id="radio-innova"]:checked~.container ul li #label-for-innova::after {
+            left: 45px;
+        }
+    }
+    .container {
+        width: 100%;
+        background-color: @color-brand;
+        padding: 0;
+    }
+    .product_line {
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .product_line_item {
+        display: inline-block;
+        padding: 0;
+        margin-left: -5px;
+        &:first-child {
+            margin-left: 5px;
+            .slide_switcher {
+                box-shadow: inset 25px 25px 90px 2px rgba(255, 255, 255, 0.5);
+            }
+        }
+    }
+    .slide-switcher {
+        display: inline-block;
+        padding: 28px 21px 23px 21px;
+        .font-size-sup(7px);
+        text-transform: uppercase;
+        color: @color-link;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .overflow-controller {
+        width: 100%;
+        height: 580px;
+        position: relative;
+        .slider_container {
+            position: absolute;
+            left: -1924px;
+            height: 100%;
+            width: 5772px;
+            .slide {
+                width: 962px;
+                height: 100%;
+                float: left;
+                .slide_img,
+                .slide_description {
+                    height: 367px;
+                    width: 50%;
+                }
+                .slide_img {
+                    float: left;
+                    background-image: url(../images/tubes-and-brush.png);
+                    background-size: auto;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+                .slide_description {
+                    float: right;
+                    p {
+                        .font-size-sup(22);
+                        margin-top: 80px;
+                        color: #74c4e4;
+                        font-weight: lighter;
+                        line-height: 48px;
+                        .product_name {
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+                .slide_text {
+                    width: 100%;
+                    padding-bottom: 35px;
+                    background-color: @color-brand;
+                    border-top: 5px solid darken(@color-brand, 20%);
+                    table {
+                        border-collapse: collapse;
+                        td {
+                            width: 240px;
+                            margin-left: 0;
+                            margin-right: 0;
+                            vertical-align: top;
+                            text-align: left;
+                            padding-top: 35px;
+                            padding-right: 20px;
+                            line-height: 20px;
+                            color: @color-text;
+                            &:first-child {
+                                padding-left: 35px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
