@@ -264,78 +264,55 @@ header {
 
 .products {
     input {
-        &[type="checkbox"] {
-            visibility: hidden;
-            position: relative;
-            top: 260px;
-            &::before,
-            &::after {
-                position: absolute;
-                visibility: visible;
-                transform: rotate(45deg);
-                content: "";
-                display: block;
-                width: 40px;
-                height: 40px;
-                border: 2px solid @color-link;
+        &[id="radio-lallum-baby"] {
+            &.product-name-visible-before::before {
+                left: -40px;
             }
-            &::before {
-                border-top-color: transparent;
-                border-right-color: transparent;
-            }
-            &::after {
-                border-bottom-color: transparent;
-                border-left-color: transparent;
-            }
-            &[id="radio-lallum-baby"] {
-                &::before {
-                    left: -40px;
-                }
-                &::after {
-                    right: -990px;
-                }
-            }
-            &[id="radio-splat-professional"] {
-                &::before {
-                    left: -58px;
-                }
-                &::after {
-                    right: -973px;
-                }
-            }
-            &[id="radio-iney"] {
-                &::before {
-                    left: -75px;
-                }
-                &::after {
-                    right: -956px;
-                }
-            }
-            &[id="radio-prowhiter"] {
-                &::before {
-                    left: -92px;
-                }
-                &::after {
-                    right: -939px;
-                }
-            }
-            &[id="radio-smilex"] {
-                &::before {
-                    left: -109px;
-                }
-                &::after {
-                    right: -922px;
-                }
-            }
-            &[id="radio-innova"] {
-                &::before {
-                    left: -126px;
-                }
-                &::after {
-                    right: -905px;
-                }
+            &.product-name-visible-after::after {
+                right: -990px;
             }
         }
+        &[id="radio-splat-professional"] {
+            &.product-name-visible-before::before {
+                left: -58px;
+            }
+            &.product-name-visible-after::after {
+                right: -973px;
+            }
+        }
+        &[id="radio-iney"] {
+            &.product-name-visible-before::before {
+                left: -75px;
+            }
+            &.product-name-visible-after::after {
+                right: -956px;
+            }
+        }
+        &[id="radio-prowhiter"] {
+            &.product-name-visible-before::before {
+                left: -92px;
+            }
+            &.product-name-visible-after::after {
+                right: -939px;
+            }
+        }
+        &[id="radio-smilex"] {
+            &.product-name-visible-before::before {
+                left: -109px;
+            }
+            &.product-name-visible-after::after {
+                right: -922px;
+            }
+        }
+        &[id="radio-innova"] {
+            &.product-name-visible-before::before {
+                left: -126px;
+            }
+            &.product-name-visible-after::after {
+                right: -905px;
+            }
+        }
+        /*здесь описание общего вида плашек с названиями товаров*/
         &[id="radio-lallum-baby"]:checked~.container ul li #label-for-lallum-baby,
         &[id="radio-splat-professional"]:checked~.container ul li #label-for-splat-professional,
         &[id="radio-iney"]:checked~.container ul li #label-for-iney,
@@ -346,6 +323,8 @@ header {
             background-color: @color-link;
             color: #fff;
             font-weight: bold;
+            /*---------------------------------------------------*/
+            /*здесь описание внешнего вида стрелочки под этими плашками*/
             &::after {
                 content: "";
                 display: block;
@@ -360,6 +339,8 @@ header {
                 z-index: 1;
             }
         }
+        /*---------------------------------------------------*/
+        /*здесь мы позиционируем стрелочки для плашек индивидуально для каждой плашки*/
         &[id="radio-lallum-baby"]:checked {
             &~.container ul li #label-for-lallum-baby::after {
                 left: 65px;
@@ -380,6 +361,7 @@ header {
         &[id="radio-innova"]:checked~.container ul li #label-for-innova::after {
             left: 45px;
         }
+        /*---------------------------------------------------*/
     }
     .container {
         width: 100%;
@@ -475,3 +457,43 @@ header {
         }
     }
 }
+
+.product-name-hidden,
+.product-name-visible-before,
+.product-name-visible-after {
+    display: inline-block;
+    visibility: hidden;
+    position: relative;
+    top: 260px;
+}
+
+
+/*здесь описываем внешний вид стрелочек для переключения слайдера*/
+
+.product-name-visible-before::before,
+.product-name-visible-after::after {
+    position: absolute;
+    visibility: visible;
+    transform: rotate(45deg);
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: 2px solid @color-link;
+}
+
+.product-name-visible-before::before {
+    border-top-color: transparent;
+    border-right-color: transparent;
+}
+
+.product-name-visible-after::after {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+}
+
+
+/*---------------------------------------------------*/
+
+
+/*здесь позиционируем правые стрелочки для каждого чекбокса aka наименование товара*/
