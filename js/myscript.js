@@ -5,11 +5,11 @@ $productName.filter(':checked').prev().removeClass('product-name-hidden').addCla
 
 $productName.click(function () {
     $productName.filter(':checked').not(this).removeAttr('checked');
-    var $productCounter = $('.product_checkbox').length;
-    alert($productCounter);
-    var $productIndex = indexOf($productName);
-    alert($productIndex);
-    //    $productName.removeClass('product-name-visible-after product-name-visible-before').addClass('product-name-hidden');
-    //    if $(this).prev().addClass('product-name-visible-before');
-    //    $(this).not(last).next().addClass('product-name-visible-after');
+    //var $productCounter = $('.product_checkbox').length;
+    //alert($productCounter);
+   // var $productIndex = indexOf($productName);
+  //  alert($productIndex);
+        $productName.removeClass('product-name-visible-after product-name-visible-before').addClass('product-name-hidden');
+     $(this:not:last).prev().addClass('product-name-visible-before');
+   $(this).not(last).next().addClass('product-name-visible-after');
 });
