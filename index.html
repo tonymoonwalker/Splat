@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <!--    <link rel="stylesheet" type="text/css" href="css/styles.css">-->
+    <!--        <link rel="stylesheet" type="text/css" href="css/styles.css">-->
     <title>Splat</title>
     <!-- after project finished - next two strings should be removed -->
     <link rel="stylesheet/less" type="text/css" href="less/styles.less">
@@ -222,46 +222,57 @@
         <!--    fixme а тут можно забыть про слайдер-->
 
     </section>
-    <section>
+    <section class="company">
         <div class="wrapper">
-            <ul>
-                <li>
-                    <a href="javascript:void(0)">Письма из упаковки</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">Написать письмо</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">Задать вопрос эксперту</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">Рекомендации экспертов</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">Поделиться идеей</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">Конкурсы</a>
-                </li>
-            </ul>
-            <p><span class="where-to-buy">Где купить</span><br>продукцию Splat</p>
-            <img src="images/kakoj-to-hooj.jpg" alt="kakoj-to hooj" width="94" height="129">
-            <blockquote>
-                <p>Когда вкладываешь всю душу в то, что создаешь, получаешь поистине бесценный результат. Когда веришь, что нет ничего невозможного, и самые смелые желания обретают форму, понимаешь, твой путь пройден не зря. Мы искренне верим &mdash; каждый способен изменить мир к лучшему. Создавая продукты под маркой SPLAT, мы знаем, что всё тепло, вложенное в них, сделает ваш день ярче, счастливее и добрее.</p><br>
-                <p>Помогать людям быть здоровыми, красивыми и успешными &mdash; наша миссия</p>
-                <cite>Евгений Демин,<br>Генеральный директор SPLAT</cite>
-            </blockquote>
+            <div class="block block__left">
+                <ul class="menu">
+                    <li>
+                        <a href="javascript:void(0)">Письма из упаковки</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Написать письмо</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Задать вопрос эксперту</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Рекомендации экспертов</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Поделиться идеей</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Конкурсы</a>
+                    </li>
+                </ul>
+                <div class="sales-info">
+                    <div class="block">
+                        <p><span class="where-to-buy">Где купить</span><br>продукцию Splat</p>
+                    </div>
+                </div>
+            </div>
+            <div class="block block__right">
+                <!--                <img src="images/kakoj-to-hooj.jpg" alt="kakoj-to hooj" width="94" height="129">-->
+                <blockquote>
+                    <p>Когда вкладываешь всю душу в то, что создаешь, получаешь поистине бесценный результат. Когда веришь, что нет ничего невозможного, и самые смелые желания обретают форму, понимаешь, твой путь пройден не зря. Мы искренне верим &mdash; каждый способен изменить мир к лучшему. Создавая продукты под маркой SPLAT, мы знаем, что всё тепло, вложенное в них, сделает ваш день ярче, счастливее и добрее.</p><br>
+                    <p>Помогать людям быть здоровыми, красивыми и успешными &mdash; наша миссия</p>
+                    <cite>Евгений Демин,<br>Генеральный директор SPLAT</cite>
+                </blockquote>
+            </div>
+            <div class="clearfix"></div>
         </div>
     </section>
     <footer>
         <div class="wrapper">
-            <img src="images/logo_splat.jpg" width="37" height="34" alt="SPLAT LOGO">
-            <copyright>© Splat, 2012</copyright>
-            <a href="javascript:void(0)">Где купить</a>
-            <a href="javascript:void(0)">Обратная связь</a>
+            <div class="block block__left"><img src="images/logo_splat.jpg" width="37" height="34" alt="SPLAT LOGO">
+                <copyright>© Splat, 2012</copyright><br><a href="javascript:void(0)">Где купить</a> <a href="javascript:void(0)">Обратная связь</a>
+            </div>
             <!--    future тут не забыть про блок с социалкой-->
             <!--    fixme  а тут забыть про блок с социалкой-->
-            <p>Если вы хотите перепечатать или использовать материалы, опубликованные на сайте, обратитесь, пожалуйста, к директору по PR по телефону 725 66 38. Спасибо!</p>
+            <div class="block block__right">
+                <p>Если вы хотите перепечатать или использовать материалы, опубликованные на сайте, обратитесь, пожалуйста, к директору по PR по телефону 725 66 38. Спасибо!</p>
+
+            </div>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>

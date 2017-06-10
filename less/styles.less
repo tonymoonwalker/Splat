@@ -21,6 +21,7 @@ sans-serif;
 
 /*--------------------------------*/
 
+@slideSize: 962px;
 
 /*Mixins Defenition*/
 
@@ -34,6 +35,14 @@ sans-serif;
 
 .font-size-sup (@foldable) {
     font-size: calc(@font-size-basic + @foldable);
+}
+
+.slider-translateX(@destination,
+@index) {
+    transform: translateX(@slideSize * @destination * @index);
+    transition-property: transform;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.4s;
 }
 
 
@@ -187,7 +196,7 @@ header {
             .button_search+label {
                 position: relative;
                 //                display: hidden;
-                &::after {
+                &:after {
                     content: "";
                     position: absolute;
                     top: 3px;
@@ -265,50 +274,50 @@ header {
 .products {
     input {
         &[id="radio-lallum-baby"] {
-            &.product-name-visible-before::before {
+            &.product-name-visible-before:before {
                 left: -40px;
             }
-            &.product-name-visible-after::after {
+            &.product-name-visible-after:after {
                 right: -990px;
             }
         }
         &[id="radio-splat-professional"] {
-            &.product-name-visible-before::before {
+            &.product-name-visible-before:before {
                 left: -58px;
             }
-            &.product-name-visible-after::after {
+            &.product-name-visible-after:after {
                 right: -973px;
             }
         }
         &[id="radio-iney"] {
-            &.product-name-visible-before::before {
+            &.product-name-visible-before:before {
                 left: -75px;
             }
-            &.product-name-visible-after::after {
+            &.product-name-visible-after:after {
                 right: -956px;
             }
         }
         &[id="radio-prowhiter"] {
-            &.product-name-visible-before::before {
+            &.product-name-visible-before:before {
                 left: -92px;
             }
-            &.product-name-visible-after::after {
+            &.product-name-visible-after:after {
                 right: -939px;
             }
         }
         &[id="radio-smilex"] {
-            &.product-name-visible-before::before {
+            &.product-name-visible-before:before {
                 left: -109px;
             }
-            &.product-name-visible-after::after {
+            &.product-name-visible-after:after {
                 right: -922px;
             }
         }
         &[id="radio-innova"] {
-            &.product-name-visible-before::before {
+            &.product-name-visible-before:before {
                 left: -126px;
             }
-            &.product-name-visible-after::after {
+            &.product-name-visible-after:after {
                 right: -905px;
             }
         }
@@ -325,7 +334,7 @@ header {
             font-weight: bold;
             /*---------------------------------------------------*/
             /*здесь описание внешнего вида стрелочки под этими плашками*/
-            &::after {
+            &:after {
                 content: "";
                 display: block;
                 width: 0px;
@@ -342,24 +351,58 @@ header {
         /*---------------------------------------------------*/
         /*здесь мы позиционируем стрелочки для плашек индивидуально для каждой плашки*/
         &[id="radio-lallum-baby"]:checked {
-            &~.container ul li #label-for-lallum-baby::after {
+            &~.container ul li #label-for-lallum-baby:after {
                 left: 65px;
             }
+            &~.overflow-controller .slider_container {
+                .slider-translateX(1,
+                2);
+            }
         }
-        &[id="radio-splat-professional"]:checked~.container ul li #label-for-splat-professional::after {
-            left: 117px;
+        &[id="radio-splat-professional"]:checked {
+            &~.container ul li #label-for-splat-professional:after {
+                left: 117px;
+            }
+            &~.overflow-controller .slider_container {
+                .slider-translateX(1,
+                1);
+            }
         }
-        &[id="radio-iney"]:checked~.container ul li #label-for-iney::after {
-            left: 28px;
+        &[id="radio-iney"]:checked {
+            &~.container ul li #label-for-iney:after {
+                left: 28px;
+            }
+            &~.overflow-controller .slider_container {
+                .slider-translateX(0,
+                0);
+            }
         }
-        &[id="radio-prowhiter"]:checked~.container ul li #label-for-prowhiter::after {
-            left: 68px;
+        &[id="radio-prowhiter"]:checked {
+            &~.container ul li #label-for-prowhiter:after {
+                left: 68px;
+            }
+            &~.overflow-controller .slider_container {
+                .slider-translateX(-1,
+                1);
+            }
         }
-        &[id="radio-smilex"]:checked~.container ul li #label-for-smilex::after {
-            left: 45px;
+        &[id="radio-smilex"]:checked {
+            &~.container ul li #label-for-smilex:after {
+                left: 45px;
+            }
+            &~.overflow-controller .slider_container {
+                .slider-translateX(-1,
+                2);
+            }
         }
-        &[id="radio-innova"]:checked~.container ul li #label-for-innova::after {
-            left: 45px;
+        &[id="radio-innova"]:checked {
+            &~.container ul li #label-for-innova:after {
+                left: 45px;
+            }
+            &~.overflow-controller .slider_container {
+                .slider-translateX(-1,
+                3);
+            }
         }
         /*---------------------------------------------------*/
     }
@@ -470,8 +513,8 @@ header {
 
 /*здесь описываем внешний вид стрелочек для переключения слайдера*/
 
-.product-name-visible-before::before,
-.product-name-visible-after::after {
+.product-name-visible-before:before,
+.product-name-visible-after:after {
     position: absolute;
     visibility: visible;
     transform: rotate(45deg);
@@ -482,14 +525,127 @@ header {
     border: 2px solid @color-link;
 }
 
-.product-name-visible-before::before {
+.product-name-visible-before:before {
     border-top-color: transparent;
     border-right-color: transparent;
 }
 
-.product-name-visible-after::after {
+.product-name-visible-after:after {
     border-bottom-color: transparent;
     border-left-color: transparent;
+}
+
+.company {
+    .wrapper {
+        .block {
+            height: 100%;
+        }
+        .block__right {
+            max-width: 460px;
+        }
+        .menu {
+            line-height: 30px;
+            background-color: @color-brand;
+            border-top: 5px solid darken(@color-brand, 20%);
+            padding: 20px 27px 20px 25px;
+        }
+        .sales-info {
+            position: relative;
+            line-height: 20px;
+            margin-top: 20px;
+            padding: 25px 25px 20px 70px;
+            background-color: @color-brand;
+            &:after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                content: "";
+                display: block;
+                width: 0;
+                height: 0;
+                border: 15px solid #fff;
+                border-bottom-color: transparent;
+                border-left-color: transparent;
+            }
+            &:before {
+                position: absolute;
+                top: 0;
+                right: 0;
+                content: "";
+                display: block;
+                width: 0;
+                height: 0;
+                border: 15px solid darken(@color-brand, 20%);
+                border-top-color: transparent;
+                border-right-color: transparent;
+            }
+        }
+    }
+    .where-to-buy {
+        position: relative;
+        &:before {
+            position: absolute;
+            content: "";
+            top: 5px;
+            left: -45px;
+            display: block;
+            height: 46px;
+            width: 31px;
+            background-image: url(../images/icon_pointer.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+        }
+    }
+    .block__right {
+        padding-right: 0;
+        vertical-align: top;
+        * {
+            margin-right: 0;
+        }
+        p {
+            position: relative;
+            .font-size-sup(4);
+            line-height: 30px;
+            margin-top: -5px;
+            &:first-child:before {
+                content: "";
+                position: absolute;
+                top: 5px;
+                left: -130px;
+                display: block;
+                height: 130px;
+                width: 95px;
+                background-image: url(../images/kakoj-to-hooj.jpg);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
+            }
+        }
+        cite {
+            font-style: italic;
+            .font-size-basic;
+            color: @color-text;
+        }
+    }
+}
+
+footer {
+    .block {
+        width: 30%;
+    }
+    .block__left {
+        vertical-align: top;
+        img {
+            float: left;
+            margin-right: 20px;
+        }
+    }
+    .block__right {
+        p {
+            .font-size-sub(3);
+        }
+    }
 }
 
 
